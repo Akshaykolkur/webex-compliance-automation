@@ -4,6 +4,8 @@ Python-based automation pipeline for downloading Webex recordings, extracting
 attendance data, uploading videos to Vimeo, and generating compliance-ready URLs.
 
 ---
+![CI](https://github.com/Akshaykolkur/webex-compliance-automation/actions/workflows/ci.yml/badge.svg)
+---
 
 ## Overview
 This project showcases a production-style automation pipeline designed to
