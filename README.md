@@ -51,7 +51,7 @@ src/
 ├── attendance_service.py # Attendance handling
 └── sheets_service.py     # Google Sheets integration
 
----
+```
 
 ## High-Level Workflow
 1. Load configuration from environment variables
