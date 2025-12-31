@@ -53,7 +53,7 @@ src/
 
 ```
 
-## High-Level Workflow
+## Workflow
 1. Load configuration from environment variables
 2. Retrieve pending batch records
 3. Fetch meeting and recording metadata from Webex
