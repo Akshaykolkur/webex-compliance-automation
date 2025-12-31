@@ -1,27 +1,92 @@
-# webex-compliance-automation
-Python-based automation pipeline for downloading Webex recordings, extracting attendance data, uploading to Vimeo, and generating compliance-ready URLs.
 # 🎥 Webex Compliance Automation Pipeline
 
+Python-based automation pipeline for downloading Webex recordings, extracting
+attendance data, uploading videos to Vimeo, and generating compliance-ready URLs.
+
+---
+
 ## Overview
-This project automates the end-to-end compliance workflow for recorded Webex meetings.
-It downloads meeting recordings, extracts attendance data, uploads content to Vimeo,
-and generates shareable URLs for audit and compliance tracking.
+This project showcases a production-style automation pipeline designed to
+process Webex meeting recordings for compliance and audit purposes.
 
-## Business Problem
-Manual handling of compliance recordings was time-consuming, error-prone, and difficult
-to audit at scale.
+The system automates:
+- Retrieval of meeting metadata
+- Download and processing of recordings
+- Upload of recordings to Vimeo
+- Extraction of attendance reports
+- Centralized tracking via Google Sheets
 
-## Solution
-An automated Python pipeline that:
-- Downloads Webex meeting recordings
-- Extracts attendance data
-- Uploads recordings to Vimeo
-- Retrieves and stores Vimeo URLs
-- Produces compliance-ready outputs with zero manual intervention
+This repository contains a **sanitized and modularized** version of the system,
+focused on architecture, orchestration, and automation design.
+
+---
+
+## Problem Statement
+Manual handling of Webex compliance recordings is time-consuming, error-prone,
+and difficult to scale across large volumes of meetings.
+
+---
+
+## Solution Overview
+A modular automation pipeline that separates concerns across:
+- API clients
+- Orchestration logic
+- External service integrations
+- Configuration management
+
+This design improves scalability, maintainability, and secure handling of
+sensitive credentials.
+
+---
+
+## Architecture
+
+```text
+src/
+├── main.py               # Application entry point
+├── config.py             # Centralized configuration
+├── pipeline.py           # Automation orchestration
+├── webex_client.py       # Webex API abstraction
+├── vimeo_client.py       # Vimeo upload abstraction
+├── attendance_service.py # Attendance handling
+└── sheets_service.py     # Google Sheets integration
+
+---
+
+## High-Level Workflow
+1. Load configuration from environment variables
+2. Retrieve pending batch records
+3. Fetch meeting and recording metadata from Webex
+4. Download and upload recordings to Vimeo
+5. Retrieve attendance reports
+6. Update tracking and audit records
+
+---
+
+## Design Principles
+- Separation of concerns
+- Secure handling of credentials
+- Modular and testable architecture
+- Production-oriented automation design
+
+---
+
+## Notes on Code Samples
+This repository intentionally excludes:
+- Production credentials and secrets
+- Company-specific workflows
+- Full API implementations
+
+The focus is on **system design and automation architecture**, not exposing
+sensitive operational logic.
+
+---
 
 ## Tech Stack
 - Python
 - REST APIs
+- Automation orchestration
+- Environment-based configuration
 - OAuth / Token-based Authentication
 - Logging & Error Handling
 - Vimeo API
