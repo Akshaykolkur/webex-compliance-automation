@@ -1,8 +1,8 @@
 """
-Vimeo upload client abstraction.
+Vimeo upload client abstraction (mock implementation).
 
-This module provides a simplified and sanitized interface
-for uploading videos to Vimeo.
+This module simulates video uploads to Vimeo for local testing
+and demonstration purposes.
 """
 
 
@@ -11,22 +11,20 @@ class VimeoUploader:
         """
         Initialize Vimeo uploader.
 
-        Actual authentication and SDK configuration
-        are intentionally omitted.
+        Real authentication and SDK configuration are intentionally omitted.
         """
         pass
 
     def upload(self, file_path, title, description=""):
         """
-        Upload a video to Vimeo.
+        Simulate uploading a video to Vimeo.
 
-        Parameters:
-            file_path: Path to the video file
-            title: Video title
-            description: Optional description
-
-        Returns:
-            Public Vimeo URL (string)
+        Returns a mock public Vimeo URL.
         """
-        # Implementation intentionally omitted
-        raise NotImplementedError("Vimeo upload logic not included")
+        safe_title = title.replace(" ", "_").lower()
+        mock_url = f"https://vimeo.com/mock/{safe_title}"
+
+        print(f"[MOCK] Uploaded '{file_path}' to Vimeo")
+        print(f"[MOCK] Vimeo URL: {mock_url}")
+
+        return mock_url
