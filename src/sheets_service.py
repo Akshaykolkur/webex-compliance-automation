@@ -1,38 +1,46 @@
 """
-Google Sheets service abstraction.
+Google Sheets service abstraction (mock implementation).
 
-This module provides a sanitized interface for interacting
-with tracking and reporting spreadsheets.
+This module simulates reading from and writing to Google Sheets
+for local testing and demonstration purposes.
 """
 
 
 class SheetsService:
     def __init__(self):
         """
-        Initialize Google Sheets service.
+        Initialize mock Google Sheets service.
 
-        Authentication and client setup are intentionally omitted.
+        Real authentication and API calls are intentionally omitted.
         """
         pass
 
     def get_pending_batches(self):
         """
-        Retrieve pending batch records for processing.
+        Simulate retrieving pending batch records.
 
-        Returns:
-            List of batch configuration objects
+        Returns a list of mock batch configurations.
         """
-        # Implementation intentionally omitted
-        raise NotImplementedError("Batch retrieval logic not included")
+        print("[MOCK] Fetching pending batches from Google Sheets")
+
+        return [
+            {
+                "meeting_number": "123456789",
+                "date": "2025-01-15",
+                "host_email": "host@example.com"
+            }
+        ]
 
     def update_status(self, batch, vimeo_url=None, attendance_path=None):
         """
-        Update processing status for a batch record.
-
-        Parameters:
-            batch: Batch configuration object
-            vimeo_url: Uploaded Vimeo URL
-            attendance_path: Path to attendance report
+        Simulate updating processing status in Google Sheets.
         """
-        # Implementation intentionally omitted
-        raise NotImplementedError("Status update logic not included")
+        print(
+            f"[MOCK] Updated status for meeting {batch['meeting_number']}"
+        )
+
+        if vimeo_url:
+            print(f"[MOCK] Vimeo URL saved: {vimeo_url}")
+
+        if attendance_path:
+            print(f"[MOCK] Attendance file saved: {attendance_path}")
